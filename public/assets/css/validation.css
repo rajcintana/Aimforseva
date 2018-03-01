@@ -1,0 +1,28 @@
+body {
+  font-family: 'Lato';
+  margin: 20px;
+  font-weight: 400;
+}
+
+label {
+  color: #555;
+  font-weight: bold;
+  margin-right: 10px;
+  display: block;
+}
+
+input {
+  border: 2px solid #2196F3;
+  width: 300px;
+  outline: none;
+  padding: 4px;
+  border-radius: 5px;
+  margin: 5px 0 10px 0;
+}
+
+p {
+  color: red;
+  font-weight: bold;
+  padding: 0;
+  margin: 5px 0 40px 0;
+}

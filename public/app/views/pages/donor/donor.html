@@ -1,0 +1,295 @@
+<!--div class="page-header">
+	<h4>Usermaster {{main.firstName}}</h4>
+	
+</div-->
+<html>
+<head>
+<title></title>
+  <link rel="stylesheet" href="assets/validation_js/userMaster.js">
+</head>
+<body>
+<br><br>
+
+<div class="container">
+	<h3 style="width: 100%;height: 30px; background-color: #003366;color: #fff;padding-left: 20px;border-radius: 5px; ">Donor Add</h3>
+	<form class="form-horizontal" action=" " method="post"  id="reg_form">
+	
+		<div class="jumbotron">
+			<div class="row">
+  				<div class="col-md-6">
+  					 <div class="form-group">
+        				<label class="col-md-4 control-label">Donor Type</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            					 <input type="radio" name="donor_type" value="Individual">Individual<br>
+								 <input type="radio" name="donor_type" value="corporate"> Corporate<br>
+          						</div>
+        					</div>
+      				 </div>
+
+      				  <div class="form-group">
+       					 <label class="col-md-4 control-label" >Donor Id</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            					<input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				 <div class="form-group">
+        				<label class="col-md-4 control-label">Organization</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            					<input name="address" placeholder="Address" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+					
+					<div class="form-group">
+        				<label class="col-md-4 control-label">Address 2</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            					<input name="address" placeholder="Address" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				<div class="form-group">
+        				<label class="col-md-4 control-label">Address 2</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            					<input name="address" placeholder="Address" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				<div class="form-group">
+        				<label class="col-md-4 control-label">Address 3</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            					<input name="address" placeholder="Address" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				<div class="form-group">
+        				<label class="col-md-4 control-label">City</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            					<input name="address" placeholder="City" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				 <div class="form-group">
+        				<label class="col-md-4 control-label">Pin Code</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            					<input name="zip" placeholder="Zip Code" class="form-control"  type="text">
+          					</div>
+        				</div>
+      				</div>
+      				<div class="form-group">
+						<label class="col-md-4 control-label">Country</label>
+						<div class="col-md-6 selectContainer">
+						  <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+							<select name="state" class="form-control selectpicker" >
+							  <option value=" " >Please select your country</option>
+							  <option>Alabama</option>
+							  <option>Alaska</option>
+							  <option >Arizona</option>
+							  <option >Arkansas</option>
+							  <option >California</option>
+							  <option >Colorado</option>
+							  <option >Connecticut</option>
+							  <option >Delaware</option>
+							  <option >District of Columbia</option>
+							  <option> Florida</option>
+							  <option >Georgia</option>
+							  <option >Hawaii</option>
+							  <option >daho</option>
+							  <option >Illinois</option>
+							  <option >Indiana</option>
+							  <option >Iowa</option>
+							  <option> Kansas</option>
+							  <option >Kentucky</option>
+							  <option >Louisiana</option>
+							  <option>Maine</option>
+							  <option >Maryland</option>
+							  <option> Mass</option>
+							  <option >Michigan</option>
+							  <option >Minnesota</option>
+							  <option>Mississippi</option>
+							  <option>Missouri</option>
+							  <option>Montana</option>
+							  <option>Nebraska</option>
+							  <option>Nevada</option>
+							  <option>New Hampshire</option>
+							  <option>New Jersey</option>
+							  <option>New Mexico</option>
+							  <option>New York</option>
+							  <option>North Carolina</option>
+							  <option>North Dakota</option>
+							  <option>Ohio</option>
+							  <option>Oklahoma</option>
+							  <option>Oregon</option>
+							  <option>Pennsylvania</option>
+							  <option>Rhode Island</option>
+							  <option>South Carolina</option>
+							  <option>South Dakota</option>
+							  <option>Tennessee</option>
+							  <option>Texas</option>
+							  <option> Uttah</option>
+							  <option>Vermont</option>
+							  <option>Virginia</option>
+							  <option >Washington</option>
+							  <option >West Virginia</option>
+							  <option>Wisconsin</option>
+							  <option >Wyoming</option>
+							</select>
+						  </div>
+						</div>
+					  </div>
+					  <div class="form-group">
+						<label class="col-md-4 control-label">State</label>
+						<div class="col-md-6 selectContainer">
+						  <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+							<select name="state" class="form-control selectpicker" >
+							  <option value=" " >Please select your state</option>
+							  <option>Alabama</option>
+							  <option>Alaska</option>
+							  <option >Arizona</option>
+							  <option >Arkansas</option>
+							  <option >California</option>
+							  <option >Colorado</option>
+							  <option >Connecticut</option>
+							  <option >Delaware</option>
+							  <option >District of Columbia</option>
+							  <option> Florida</option>
+							  <option >Georgia</option>
+							  <option >Hawaii</option>
+							  <option >daho</option>
+							  <option >Illinois</option>
+							  <option >Indiana</option>
+							  <option >Iowa</option>
+							  <option> Kansas</option>
+							  <option >Kentucky</option>
+							  <option >Louisiana</option>
+							  <option>Maine</option>
+							  <option >Maryland</option>
+							  <option> Mass</option>
+							  <option >Michigan</option>
+							  <option >Minnesota</option>
+							  <option>Mississippi</option>
+							  <option>Missouri</option>
+							  <option>Montana</option>
+							  <option>Nebraska</option>
+							  <option>Nevada</option>
+							  <option>New Hampshire</option>
+							  <option>New Jersey</option>
+							  <option>New Mexico</option>
+							  <option>New York</option>
+							  <option>North Carolina</option>
+							  <option>North Dakota</option>
+							  <option>Ohio</option>
+							  <option>Oklahoma</option>
+							  <option>Oregon</option>
+							  <option>Pennsylvania</option>
+							  <option>Rhode Island</option>
+							  <option>South Carolina</option>
+							  <option>South Dakota</option>
+							  <option>Tennessee</option>
+							  <option>Texas</option>
+							  <option> Uttah</option>
+							  <option>Vermont</option>
+							  <option>Virginia</option>
+							  <option >Washington</option>
+							  <option >West Virginia</option>
+							  <option>Wisconsin</option>
+							  <option >Wyoming</option>
+							</select>
+						  </div>
+						</div>
+					  </div>
+						 <table style="margin: 0 auto;">
+							<tr>	
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary">Save</button>
+										<button type="button" class="btn btn-primary">Reset</button>
+									</div>
+								</td>
+							</tr>
+						 </table>				
+  				</div>
+  				<div class="col-md-6">
+  					 <div class="form-group">
+        				<label class="col-md-4 control-label">D.O.B</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            					<input name="zip" placeholder="Zip Code" class="form-control"  type="date">
+          					</div>
+        				</div>
+      				</div>
+
+      				
+  					 <div class="form-group">
+        				<label class="col-md-4 control-label">Anniversary</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            					<input name="zip" placeholder="Zip Code" class="form-control"  type="date">
+          					</div>
+        				</div>
+      				</div>
+
+      				<div class="form-group">
+       					 <label class="col-md-4 control-label">Mobile No.</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            					<input name="phone" placeholder="(000)000-0000" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				<div class="form-group">
+       					 <label class="col-md-4 control-label">Landline No.</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            					<input name="phone" placeholder="(000)000-0000" class="form-control" type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				 <div class="form-group">
+       					 <label class="col-md-4 control-label">E-Mail</label>
+        					<div class="col-md-6  inputGroupContainer">
+          						<div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            					<input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+          					</div>
+        				</div>
+      				</div>
+
+      				<div class="form-group">
+        <label class="col-md-4 control-label">Active</label>
+        <div class="col-md-6 selectContainer">
+          <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+            <select name="state" class="form-control selectpicker" >
+              <option value=" " >Please select</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+      </div>
+     
+     
+     
+  				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+ </body>
+ </html>

@@ -1,0 +1,51 @@
+DELIMITER $$
+DROP PROCEDURE IF EXISTS `seva_final`.`sp_user_master` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_user_master`(IN `userMaster` JSON, IN `statement` VARCHAR(30), IN `flag` INT, IN `usr_code` INT)
+begin
+
+declare i_country_code int;
+declare i_state_code int;
+declare i_first_name varchar(50);
+declare i_last_name varchar(50);
+declare i_address1 varchar(80);
+declare i_address2 varchar(80);
+declare i_address3 varchar(80);
+declare i_city varchar(50);
+declare i_anniversary date;
+declare i_dob date;
+
+declare i_created_at datetime;
+declare i_updated_at datetime;
+declare i_created_by varchar(30);
+declare i_updated_by varchar(30);
+declare i_status SMALLINT(10);
+declare i_notes varchar(4000);
+
+set i_country_code = JSON_EXTRACT(campaignMaster,'$.country_code');
+set i_state_code = JSON_EXTRACT(campaignMaster,'$.state_code');
+set i_campaign_name = JSON_EXTRACT(campaignMaster,'$.campaign');
+set i_date_from = CAST(jSON_UNQUOTE(JSON_EXTRACT(campaignMaster,'$.date_from'))as DATE);
+set i_date_to = CAST(jSON_UNQUOTE(JSON_EXTRACT(campaignMaster,'$.date_to'))as DATE);
+set i_created_at = CAST(jSON_UNQUOTE(JSON_EXTRACT(campaignMaster,'$.created_at'))as DATETIME);
+set i_updated_at = CAST(jSON_UNQUOTE(JSON_EXTRACT(campaignMaster,'$.updated_at')) as DATETIME);
+set i_updated_by = JSON_EXTRACT(campaignMaster,'$.updated_by');
+set i_created_by = JSON_EXTRACT(campaignMaster,'$.created_by');
+set i_status = JSON_EXTRACT(campaignMaster,'$.active');
+set i_notes = JSON_EXTRACT(campaignMaster,'$.notes');
+
+if flag=1 THEN
+	if statement='Insert' then
+		insert into campaign(country_code,state_code,campaign,date_from,date_to,created_at,updated_at,created_by,updated_by,active,notes) values(i_country_code,i_state_code,i_date_from,i_date_to,i_created_at,i_updated_at,i_created_by,i_updated_by,i_status,i_notes);
+	elseif statement='Select' then
+		SELECT country_master.country, state_master.state,campaign.campaign,campaign.date_from,campaign.date_to,campaign.active FROM country_master INNER JOIN state_master INNER JOIN campaign ON  campaign.country_code=country_master.country_code and campaign.state_code=state_master.state_code;
+    end if;
+    else
+    IF statement='Update' THEN
+    	update campaign set country_code=i_country_code, state_code=i_state_code,date_from=i_date_from,date_to=i_date_to,active=i_status,created_at=i_created_at,updated_at=i_updated_at,updated_by=i_updated_by,created_by=i_created_by,notes=i_notes where campaign_code=cmp_code;
+    ELSEIF statement='Delete' THEN
+    	DELETE from state_master WHERE state_code=cmp_code;
+	end if;
+ end if;
+	
+end$$
+DELIMITER ;
