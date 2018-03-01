@@ -55,8 +55,8 @@ angular.module('appRoutes',['ui.router'])
 	})
 	.state('login',{
 		url:'/login',
-		templateUrl:'app/views/pages/users/login.html'
-		
+		templateUrl:'app/views/user/login.html',
+		controller:'mainCtrl as main'
 
 	})
 	.state('home.dashboard',{
@@ -65,22 +65,22 @@ angular.module('appRoutes',['ui.router'])
 	})
 	.state('logout',{
 		url: '/logout',
-		templateUrl:'app/views/pages/users/logout.html'
+		templateUrl:'app/views/user/logout.html'
 	})
 	.state('home.profile',{
 		url:'/profile',
-		templateUrl:'app/views/pages/users/profile.html'
+		templateUrl:'app/views/user/profile.html'
 	})
 	.state('home.userMaster',{
 		url:'/userMaster',
-		templateUrl:'app/views/pages/users/userMaster.html',
+		templateUrl:'app/views/user/userMaster.html',
 		controller:'regCtrl',
 		controllerAs:'userMaster'
 	})
 	.state('home.countryMaster',{
-		url: '/countryMaster',
-		templateUrl:'app/views/pages/master/Countrymaster.html',
-		controller:'countryCtrl as countryMaster'
+		url: '/CountryMaster',
+		templateUrl:'app/views/master/CountryMaster.html'
+		//controller:'countryCtrl as countryMaster'
 		//controllerAs:'countryMaster'
 	})
 

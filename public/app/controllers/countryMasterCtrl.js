@@ -44,8 +44,8 @@ Block comments to document a method
 : **/
 
 
-angular.module('countrymasterctrl',[ 'angularUtils.directives.dirPagination','countryMasterServices'])
-.controller('countryCtrl',function($http,$state,$timeout,$scope,Country,CountryShow)
+angular.module('countrymasterctrl',[ 'angularUtils.directives.dirPagination','userServices'])
+.controller('countryCtrl',function($http,$state,$timeout,$scope,Country)
 {
 	var app=this;
 
@@ -103,7 +103,6 @@ var refresh=function()
 	// regData parameter is used to collect data from html page
 	$scope.setCountryMaster=function(regData)
 	{
-		var url='countryMaster';
 		console.log('inside of set countryMaster function');
 		
 //swal : it is a npm for pop messaging
@@ -116,9 +115,9 @@ var refresh=function()
 				.then((willSave) => {
 				  if (willSave) {
 				  	//rest api calling the webservices
-				  	Country.create(regData,url).then (function(data)
+				  	Country.create(regData).then (function(data)
 						{
-							//console.log(data);
+							console.log(data);
 							if(data.data.success)
 							{
 								$timeout(function()
@@ -155,7 +154,15 @@ var refresh=function()
 		
 		
 	};
-	
+	/////////////////update///////////////
+	$scope.edit = function(country_code) {
+  	
+  	$http.get('api/countryMaster/' + country_code).success(function(response) {
+    	$scope.contact = response;
+  		});
+	}; 
+
+	////////////////end of update////////
 	////////////////delete///////////////
 
 	$scope.remove = function(country_code) {
@@ -189,19 +196,5 @@ var refresh=function()
 	};
 
 	////////////////end of delete.////////////
-//////////// show the record by id ///////////////
-
-$scope.show  = function(id) {
-  console.log('from controller',id);
-
-  CountryShow.showRecord(id).success(function(response) {
-  	console.log('read the showRecord function');
-    $scope.countryMaster = response;
-
-  });
-}; 
-/////////// end of showing the record by id /////////
-
-
 
 });

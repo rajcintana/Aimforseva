@@ -13,8 +13,6 @@ Header comments for the Files
 // Filename : index.js*
 
 //Purpose /Functionality: it store the host name,username of db ,password of db, and port also it contain
-						  
-
 // Author : pavithra
 
 // Createdon: 17-feb-1018

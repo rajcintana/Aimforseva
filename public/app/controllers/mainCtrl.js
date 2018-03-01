@@ -72,39 +72,54 @@ angular.module('mainController',['authServices'])
 		app.first_name='';
 	}
 	});
+
+	//Changes by Sobana
+	// this.doLogin=function(logInData)
+	// {
+	// 	//console.log('form submit');
+	// 	app.loading=true;
+	// 	app.errorMsg=false;
+	// 	Auth.login(app.logInData).then(function(data)
+	// 	{
+	// 		if(data.data.success)
+	// 		{
+	// 			app.loading=false;
+	// 			app.successMsg=data.data.message+'...Redirecting';
+	// 			$timeout(function()
+	// 			{
+	// 				$state.go('home.dashboard');
+	// 				app.logInData='';
+	// 				app.successMsg=false;
+
+	// 			},2000);
+	// 		}
+	// 		else if(data.data.role)
+	// 		{
+	// 			$state.go('home.userMaster');
+				
+	// 		}
+	// 		else
+	// 		{
+	// 			app.loading=false;
+	// 			app.errorMsg=data.data.message;
+	// 			console.log(data);
+				
+	// 		}
+	// 	});
+	// };
+	//End of changes by Sobana
+
+	//Changes by Sobana
+
 	this.doLogin=function(logInData)
 	{
-		//console.log('form submit');
+		alert('form submit');
 		app.loading=true;
 		app.errorMsg=false;
-		Auth.login(app.logInData).then(function(data)
-		{
-			if(data.data.success)
-			{
-				app.loading=false;
-				app.successMsg=data.data.message+'...Redirecting';
-				$timeout(function()
-				{
-					$state.go('home.dashboard');
-					app.logInData='';
-					app.successMsg=false;
-
-				},2000);
-			}
-			else if(data.data.role)
-			{
-				$state.go('home.userMaster');
-				
-			}
-			else
-			{
-				app.loading=false;
-				app.errorMsg=data.data.message;
-				console.log(data);
-				
-			}
-		});
+		$state.go('home.dashboard');
+		
 	};
+	//End of changes by Sobana
 	///logout codes
 	this.logout=function()
 	{

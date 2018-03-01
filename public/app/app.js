@@ -1,45 +1,29 @@
-//console.log('testing the app file');
-angular.module('userApp',['appRoutes','mainController','authServices','usermasterctrl','countryMasterServices','countrymasterctrl', 'angularUtils.directives.dirPagination'])
-.config(function($httpProvider)
-{
-	$httpProvider.interceptors.push('AuthInterceptors');
-	//$httpProvider.responseInterceptors.push('AuthInterceptors');
-});
+angular.module('userApp',['appRoutes','mainController','authServices','usermasterctrl','userServices','countrymasterctrl', 'angularUtils.directives.dirPagination'])
 
-/*
-Guidelines for Comments
+.run(
+    ['$rootScope', '$state', '$stateParams',
+    function ($rootScope, $state, $stateParams) {
+        $rootScope.$state = $state;
+        $rootScope.$stateParams = $stateParams;
+        $state.transitionTo('login');
+    }
+    ]
+        )
 
-Header comments for the Files
-*/
-/****************************************************/
+.config(
+    ['$stateProvider', '$urlRouterProvider', '$httpProvider',
+    function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
-// Filename : app.js.*
+        // $httpProvider.defaults.useXDomain = true;
+        // delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        // $httpProvider.defaults.headers.common["Accept"] = "application/json";
+        // $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 
-//Purpose /Functionality: this file is used to store all the controller,app, services and header also
-						  
+        $httpProvider.interceptors.push('AuthInterceptors');
 
-// Author : Rajesh kumar ranjan(id:T0007)
+      
 
-// Createdon: 17-feb-1018
 
-// Change history:
-
-// v1.10 date of change /Author name
-
-/****************************************************/
-/*
-Block level Comments:
-
-Block comments to document a method
-*/
-
-/**
-
-* Author : Rajesh Kumar Ranjan(T0007) , Created on:17-feb-2018 , Purpose:
-* @param
        
-* @return
-
-* Change history
-
-: **/
+    }
+    ]);
