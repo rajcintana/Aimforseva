@@ -5,8 +5,8 @@ module.exports=function(router)
 {
 	router.post('/countryMaster',function(req,res)
 	{
-		//var today = new Date();//current data and time store into the database
-    var  today='2018-02-15 13:47:00.620';
+		var today = new Date();//current data and time store into the database
+    //var  today='2018-02-15 13:47:00.620';
 ///collect data from html pages that is Countrymaster.html
 		 var countryMaster={
         "country":req.body.country,
