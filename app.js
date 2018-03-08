@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use( index);
 app.use(getCountryList);//changes by rajesh(t0007) any query asks
 app.use('/state', state);
 //app.use('/user', user);
