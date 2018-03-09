@@ -10,8 +10,12 @@ const config = require('./model/config');
 const index = require('./routes/index');
 const country = require('./routes/master/country_master');
 const state = require('./routes/master/state_master');
+/* Added by Ankit exception hadling  1/3/2018 */
+  domain = require('domain'),
+  errHandler = require('./errHandler'),
+  componentOutsideExpress = require('./component');
 
-
+/* End Ankit*/
 var app = express();
  
 // view engine setup

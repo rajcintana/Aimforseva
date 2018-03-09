@@ -1,14 +1,9 @@
-/*
-Guidelines for Comments
 
-Header comments for the Files
-*/
 /****************************************************/
 
-// Filename : countryMasterCtrls.*
+// Filename : countryMasterCtrl.*
 
-//Purpose /Functionality: it is a controller file of country_master file that is placed in the model for of app
-						  //it is a angular file and it have a controller(countryCtrl)
+//Purpose /Functionality: It is a file used for performing the country-master functionalities.
 						  //controller :countryCtrl
 						  //app  :countrymasterctrl
 						  //pagination path :angularUtils.directives.dirPagination
@@ -16,10 +11,6 @@ Header comments for the Files
 // Author : Rajesh kumar ranjan(id:T0007)
 
 // Createdon: 17-feb-1018
-
-// Change history:
-
-// v1.10 date of change /Author name
 
 /****************************************************/
 /*
@@ -39,72 +30,21 @@ Block comments to document a method
        this all are the services
 * @return
 
-* Change history
+* Change history:
 
 : **/
 
 
-angular.module('countrymasterctrl',[ 'angularUtils.directives.dirPagination','userServices'])
-.controller('countryCtrl',function($http,$state,$timeout,$scope,Country)
+angular.module('countrymasterctrl',[ 'angularUtils.directives.dirPagination','countryMasterServices'])
+.controller('countryCtrl',function($http,$state,$timeout,$scope,Country,$log)
 {
 	var app=this;
-
-	////// fetch the all record from database useing the rest api call the country_master.js file from model folder
-var refresh=function()
-{
-	
-	$scope.countryMaster = []; //declare an empty array
-	$http.get("api/countryMaster").success(function(response){ 
-		//console.log(response);
-		$scope.countryMaster = response[0]; 
-		//ajax request to fetch data into $scope.data
-		//console.log(typeof $scope.countryMaster);
-	});
-	
-	$scope.sort = function(keyname){
-		$scope.sortKey = keyname;   //set the sortKey to the param passed
-		$scope.reverse = !$scope.reverse; //if true make it false and vice versa
-	}
-};
-
-	refresh();//calling function
-	/*
-	this.setCountryMaster=function(regData)
-	{
-		console.log(regData);
-		app.loading=true;
-		app.errorMsg=false;
-		
-		
-		
-		User.create(app.regData).then (function(data)
-		{
-			console.log(data.data.success);
-			console.log(data.data.message);
-			if(data.data.success)
-			{
-				app.loading=false;
-				app.successMsg=data.data.message;
-				$timeout(function()
-				{
-					$state.go('home.countryMaster');
-				})
-				
-			}
-			else
-			{
-				app.loading=false;
-				app.errorMsg=data.data.message;
-			}
-		});
-		//swal("Hello world!");
-	};*/
-	//save the record in the database
-	// regData parameter is used to collect data from html page
+// regData parameter is used to collect data from html page
 	$scope.setCountryMaster=function(regData)
 	{
-		console.log('inside of set countryMaster function');
-		
+		logger.info('inside of set countryMaster function')
+		//console.log('inside of set countryMaster function');
+		var url='countryMaster';
 //swal : it is a npm for pop messaging
 				swal({
 				  title: "Are you sure you want to save ?",
@@ -115,9 +55,10 @@ var refresh=function()
 				.then((willSave) => {
 				  if (willSave) {
 				  	//rest api calling the webservices
-				  	Country.create(regData).then (function(data)
+				  	Country.create(regData,url).then (function(data)
 						{
-							console.log(data);
+							//console.log(data);
+							logger.info(data);
 							if(data.data.success)
 							{
 								$timeout(function()
@@ -166,7 +107,8 @@ var refresh=function()
 	////////////////delete///////////////
 
 	$scope.remove = function(country_code) {
-  	console.log(country_code);
+		logger.log(country_code);
+		//console.log(country_code);
 
 		swal({
 		  title: "Are you sure?",

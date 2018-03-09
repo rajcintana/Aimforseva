@@ -15,6 +15,7 @@
     "ejs": "~2.5.2",
     "express": "~4.14.0",
     "express-fileupload": "0.0.5",
+    "jsonwebtoken": "^8.2.0",
     "mongoose": "^4.7.5",
     "mongoose-timestamp": "^0.6.0",
     "mongoose-trackable": "^0.3.0",
@@ -23,8 +24,8 @@
     "mysql": "^2.15.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "save": "^2.3.2",
     "serve-favicon": "~2.3.0",
+    "sweetalert": "^2.1.0",
     "swig": "^1.4.2",
     "winston": "^2.3.0",
     "winston-daily-rotate-file": "^1.4.0"

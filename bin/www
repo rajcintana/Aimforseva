@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-var app = require('../server');
+var app = require('../app');
 var debug = require('debug')('AIMSEVA');
 var http = require('http');
 

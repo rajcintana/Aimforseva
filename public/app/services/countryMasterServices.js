@@ -1,16 +1,12 @@
-/*
-Guidelines for Comments
 
-Header comments for the Files
-*/
 /****************************************************/
 
 // Filename : countryMasterCtrls.*
 
-//Purpose /Functionality: it is a controller file of country_master file that is placed in the model for of app
-						  //it is a angular file and it have a controller
-						  //controller :mainCtrl
-						  //app  : mainController
+//Purpose /Functionality: it is a services file for country_master.
+						  //it is a angular file with countryMaster Services
+						  //services :countryMasterServices
+						  //app  : services
 						  
 
 // Author : Rajesh kumar ranjan(id:T0007)
@@ -22,17 +18,13 @@ Header comments for the Files
 // v1.10 date of change /Author name
 
 /****************************************************/
-/*
-Block level Comments:
 
-Block comments to document a method
-*/
 
 /**
 
 * Author : Rajesh Kumar Ranjan(T0007) , Created on:17-feb-2018 , Purpose:
 * @param
-       Auth : it is a services
+       Auth : it is services regarding the countryMaster.
        $rootScope : it is use at the time of login to refresh /change the state of form
        $stateChngeStart : by using this services to change the state
        
@@ -51,7 +43,7 @@ angular.module('countryMasterServices',[])
 	countryMasterFactory.create=function(regData,url)
 	{
 		console.log(url);
-		return $http.post('/api/'+url,regData);
+		return $http.post('/'+url,regData);
 	}
 	return countryMasterFactory;
 })
@@ -60,14 +52,14 @@ angular.module('countryMasterServices',[])
 	
 	countryMasterShowFactory={};
 	//user.create(regData); 
-	countryMasterShowFactory.showRecord=function(id)
+	countryMasterShowFactory.updateRecord=function(user,url)
 	{
 		
-		console.log('calling the services inside ');
-		console.log('from services',id);
-		return $http.get('/api/countryMaster/',id);
+		console.log('from services',user);
+		var id=user.country_code
 
-		//return $http.get('/api/countryMaster/:',params:{'country_code':id});
+		return $http.put('/'+url+'/'+id,user);
 	}
 	return countryMasterShowFactory;
 });
+

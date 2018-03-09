@@ -7,8 +7,7 @@ Header comments for the Files
 
 // Filename : countryMasterCtrls.*
 
-//Purpose /Functionality: it is a controller file of country_master file that is placed in the model for of app
-						  //it is a angular file and it have a controller
+//Purpose /Functionality: it is a controller where the user functionalities are performed.
 						  //controller :mainCtrl
 						  //app  : mainController
 						  
@@ -54,7 +53,7 @@ angular.module('usermasterctrl',[])
 		//user.create(regData); 
 		console.log('form is submitted');
 		console.log(this.regData);
-		$http.post('api/userMaster',this.regData).then (function(data)
+		$http.post('/user',this.regData).then (function(data)
 		{
 			console.log(data.data.success);
 			console.log(data.data.message);

@@ -35,7 +35,7 @@ Block comments to document a method
 * Change history
 
 : **/
-var mysql      = require('mysql');
+var mysql = require('mysql');
 require('dotenv').config();
 var app = require('./bin/dev');
 

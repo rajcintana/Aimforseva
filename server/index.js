@@ -3,6 +3,7 @@
 (process.env.DB_PASS);
 (process.env.DB_NAME);
 (process.env.DB_PORT);
+
 /*
 Guidelines for Comments
 
@@ -13,6 +14,8 @@ Header comments for the Files
 // Filename : index.js*
 
 //Purpose /Functionality: it store the host name,username of db ,password of db, and port also it contain
+						  
+
 // Author : pavithra
 
 // Createdon: 17-feb-1018

@@ -52,7 +52,7 @@ angular.module('userServices',[])
 	{
 		
 		
-		return $http.post('/api/countryMaster',regData);
+		return $http.post('/countryMaster',regData);
 	}
 	return userFactory;
 });

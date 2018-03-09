@@ -1,25 +1,19 @@
-/*
-Guidelines for Comments
 
-Header comments for the Files
-*/
 /****************************************************/
 
 // Filename : mainCtrl.js
 
-//Purpose /Functionality: it is a controller file of country_master file that is placed in the model for of app
-						  //it is a angular file and it have a controller
+//Purpose /Functionality: It is a controller where the login with its functionalities are performed.
 						  //controller :mainCtrl
 						  //app  : mainController
 						  
-
-// Author : Rajesh kumar ranjan(id:T0007)
+ // Author : Rajesh kumar ranjan(id:T0007)
 
 // Createdon: 17-feb-1018
 
 // Change history:
 
-// v1.10 date of change /Author name
+// v1.10 date of change /Author name 
 
 /****************************************************/
 /*
@@ -46,11 +40,11 @@ Block comments to document a method
 angular.module('mainController',['authServices'])
 .controller('mainCtrl',function(Auth,$timeout,$state,$rootScope,$scope)
 {
-	
+	console.log('testinthe mainCtrl');
 	var app=this;
 	$rootScope.$on('$stateChangeStart',function()
 	{   
-		
+		console.log('reading the inside of function');	
 
 		if(Auth.isLoggedIn())
 	{
@@ -58,8 +52,8 @@ angular.module('mainController',['authServices'])
 		app.isLoggedIn=true;
 		Auth.getUser().then(function(data)
 		{
-			//console.log(data.data.first_name);
-			//console.log(data.data.email_id);
+			console.log(data.data.first_name);
+			console.log(data.data.email_id);
 			app.first_name=data.data.first_name;
 			app.email_id=data.data.email_id;
 
@@ -73,53 +67,43 @@ angular.module('mainController',['authServices'])
 	}
 	});
 
-	//Changes by Sobana
-	// this.doLogin=function(logInData)
-	// {
-	// 	//console.log('form submit');
-	// 	app.loading=true;
-	// 	app.errorMsg=false;
-	// 	Auth.login(app.logInData).then(function(data)
-	// 	{
-	// 		if(data.data.success)
-	// 		{
-	// 			app.loading=false;
-	// 			app.successMsg=data.data.message+'...Redirecting';
-	// 			$timeout(function()
-	// 			{
-	// 				$state.go('home.dashboard');
-	// 				app.logInData='';
-	// 				app.successMsg=false;
+	
+	 this.doLogin=function(logInData)
+	 {
+	 	console.log('form submit');
+	 	app.loading=true;
+	 	app.errorMsg=false;
+	 	Auth.login(app.logInData).then(function(data)
+	 	{
+	 		if(data.data.success)
+	 		{
+	 			app.loading=false;
+	 			app.successMsg=data.data.message+'...Redirecting';
+	 			$timeout(function()
+	 			{
+	 				$state.go('home.dashboard');
+	 				app.logInData='';
+	 				app.successMsg=false;
 
-	// 			},2000);
-	// 		}
-	// 		else if(data.data.role)
-	// 		{
-	// 			$state.go('home.userMaster');
+	 			},2000);
+	 		}
+	 		else if(data.data.role)
+	 		{
+	 			$state.go('home.userMaster');
 				
-	// 		}
-	// 		else
-	// 		{
-	// 			app.loading=false;
-	// 			app.errorMsg=data.data.message;
-	// 			console.log(data);
+	 		}
+	 		else
+	 		{
+	 			app.loading=false;
+	 			app.errorMsg=data.data.message;
+	 			console.log(data);
 				
-	// 		}
-	// 	});
-	// };
-	//End of changes by Sobana
+	 		}
+	 	});
+	 };
+	
 
-	//Changes by Sobana
-
-	this.doLogin=function(logInData)
-	{
-		alert('form submit');
-		app.loading=true;
-		app.errorMsg=false;
-		$state.go('home.dashboard');
-		
-	};
-	//End of changes by Sobana
+	
 	///logout codes
 	this.logout=function()
 	{
