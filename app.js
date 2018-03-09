@@ -27,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use( index);
 app.use(getCountryList);//changes by rajesh(t0007) any query asks
 app.use(state);
+
 //app.use('/user', user);
 
 // catch 404 and forward to error handler
