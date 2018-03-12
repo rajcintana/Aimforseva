@@ -1,6 +1,6 @@
-angular.module('userApp',['appRoutes','mainController','authServices','usermasterctrl','userServices','countrymasterctrl', 'angularUtils.directives.dirPagination'])
+angular.module('userApp',['appRoutes','mainController','authServices','usermasterctrl','countryMasterServices','countrymasterctrl','angularUtils.directives.dirPagination'])
 
-.run(
+/*.run(
     ['$rootScope', '$state', '$stateParams',
     function ($rootScope, $state, $stateParams) {
         $rootScope.$state = $state;
@@ -8,7 +8,7 @@ angular.module('userApp',['appRoutes','mainController','authServices','usermaste
         $state.transitionTo('login');
     }
     ]
-        )
+        )*/
 
 .config(
     ['$stateProvider', '$urlRouterProvider', '$httpProvider',

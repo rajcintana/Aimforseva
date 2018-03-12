@@ -39,7 +39,7 @@ Block comments to document a method
  //start of db interaction
 
  var logger = require('../logger');
-var mysql      = require('mysql');
+var mysql   = require('mysql');
 require('dotenv').config();
 //var app = require('./bin/dev');
 
@@ -50,13 +50,15 @@ var connection = mysql.createPool({
   user     : 'root',
   password : 'rootphp',
   database : 'seva'*/
-   host: process.env.DB_HOST,
+  host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.DB_NAME
-  
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT
+
 })
 connection.getConnection(function(err){
+  console.log(err);
 if(!err) {
     console.log("Database is connected");
 } else {

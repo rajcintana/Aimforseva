@@ -39,15 +39,18 @@ Block comments to document a method
 * Change history
 
 : **/
+
 angular.module('authServices',[])
 .factory('Auth',function($http,AuthToken)
 {
+	console.log('testing of services');
 	var authFactory={};
+
 	authFactory.login=function(logInData)
-	{
-		return $http.post('/api/authenticate',logInData).then(function(data)
+	{console.log('from service' ,logInData);
+		return $http.post('/user/authenticate',logInData).then(function(data)
 			{
-				//console.log(data);
+				console.log('from service' ,data);
 				AuthToken.setToken(data.data.token);//set the token 
 
 				return data;
@@ -71,7 +74,7 @@ angular.module('authServices',[])
 	{
 		if(AuthToken.getToken())
 		{
-			return $http.post('/api/me');
+			return $http.post('/me');
 		}
 		else
 		{

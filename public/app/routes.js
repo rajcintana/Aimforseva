@@ -62,6 +62,7 @@ angular.module('appRoutes',['ui.router'])
 	.state('home.dashboard',{
 		url: '/dashboard',
 		templateUrl:'app/views/pages/dashboard.html'
+		
 	})
 	.state('logout',{
 		url: '/logout',
@@ -79,17 +80,17 @@ angular.module('appRoutes',['ui.router'])
 	})
 	.state('home.countryMaster',{
 		url: '/CountryMaster',
-		templateUrl:'app/views/master/CountryMaster.html'
-		//controller:'countryCtrl as countryMaster'
+		templateUrl:'app/views/master/CountryMaster.html',
+		controller:'countryCtrl as countryMaster'
 		//controllerAs:'countryMaster'
 	})
 
 	.state('home.viewCountryMaster',{
 		url: '/viewCountryMaster',
-		templateUrl:'app/views/pages/master/pagination/viewCountryMaster.html',
-		controller:'countryCtrl as countryMaster' ,
+		templateUrl:'app/views/master/viewCountryMaster.html',
+		controller:'countryCtrl as countryMaster' 
 		//controllerAs:'countryMaster'
 	})
 
-	 $urlRouterProvider.otherwise('/login');//default open these file
+	 //$urlRouterProvider.otherwise('/login');//default open these file
 }); 
