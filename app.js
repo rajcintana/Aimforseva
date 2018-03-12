@@ -12,7 +12,7 @@ var router=express.Router();
 // changes by rajesh(t0007)
 var appRoutes = require('./routes/master/country_master')(router);
 var appRoutes = require('./routes/master/state_master')(router);
-var appRoutes=require('./routes/master/user_master')(router);
+//var appRoutes=require('./routes/master/user_master')(router);
 //end of rajesh(t0007)
 var app = express();
  

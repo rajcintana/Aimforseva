@@ -1,0 +1,12 @@
+{"level":"verbose","message":"Verbose info","timestamp":"12:39:43"}
+{"level":"info","message":"Hello world","timestamp":"12:39:43"}
+{"level":"warn","message":"Warning message","timestamp":"12:39:43"}
+{"level":"error","message":"Error info","timestamp":"12:39:43"}
+{"level":"verbose","message":"Verbose info","timestamp":"13:00:03"}
+{"level":"info","message":"Hello world","timestamp":"13:00:03"}
+{"level":"warn","message":"Warning message","timestamp":"13:00:03"}
+{"level":"error","message":"Error info","timestamp":"13:00:03"}
+{"level":"verbose","message":"Verbose info","timestamp":"13:10:06"}
+{"level":"info","message":"Hello world","timestamp":"13:10:06"}
+{"level":"warn","message":"Warning message","timestamp":"13:10:06"}
+{"level":"error","message":"Error info","timestamp":"13:10:06"}
