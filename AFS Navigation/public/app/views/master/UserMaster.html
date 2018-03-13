@@ -1,0 +1,258 @@
+<!--Pavithra-->
+
+
+    <section class="content-header">
+      <h1>
+        User Master
+      </h1>
+      <!-- <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Masters</a></li>
+        <li class="active">User Master</li>
+      </ol> -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-8">
+             <div class="box box-primary">
+            <div class="box-header">
+              <div class="bg-navy-active color-palette">
+              <br>
+              <h3 class="box-title">&nbsp;&nbsp;User List</h3>
+            </div>
+          </div>
+        </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table class="table table-striped">
+                <tr>
+                  
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>E-mail</th>
+                  <th>Phone</th>
+                   <th>Role</th>
+                  <th>Ch.Pass</th>
+                  <th>Actions</th>
+                </tr>
+                <tr>
+                  <td>1.</td>
+                  <td>Update software</td>
+                  <td>wefeew</td>
+                  <td></td>
+                  <td>
+                  <a href="#">Role</a>
+                  </td>
+                  
+                  <td><a href="#">Ch Pwd</td>
+                  <td><button type="button" class="btn bg-teal-gradient btn-sm">
+          <span class="glyphicon glyphicon-eye-open"></span></button><button type="button" class="btn bg-teal-gradient btn-sm">
+          <span class="glyphicon glyphicon-edit"></span>  
+        </button><button type="button" class="btn bg-teal-gradient btn-sm">
+          <span class="glyphicon glyphicon-trash"></span></button> </td>
+
+                </tr>
+                
+              </table>
+            </div>
+            <!-- /.box-body -->
+            
+          </div>
+         </div>
+         <div class="row">
+       <div class="col-md-6">
+          <div class="box">
+            <div class="box box-primary">
+              <div class="box-header">
+               <div class="bg-navy-active color-palette">
+              <br>
+              <h3 class="box-title">&nbsp;&nbsp;Add</h3>
+
+              
+            </div>
+            <br>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+             <label class="col-md-4 control-label">First Name</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input  name="first_name" placeholder="First Name" class="form-control"   type="text" ng-model="userMaster.regData.firstName"  ng-model="inputname" ng-minlength="2" ng-maxlength="50" ng-pattern="/^\w+$/"  required>
+                      </div>
+                  </div>
+            </div>
+               <br><br>
+                <div class="form-group">
+                 <label class="col-md-4 control-label" >Last Name</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      <input name="last_name" placeholder="Last Name" class="form-control"  type="text" ng-model="userMaster.regData.lastName" >
+                    </div>
+                </div>
+              </div>
+              <br><br>
+               <div class="form-group">
+                <label class="col-md-4 control-label">Address 1</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="address" placeholder="Address" class="form-control" type="text" ng-model="userMaster.regData.address1">
+                    </div>
+                </div>
+              </div>
+              <br><br>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Address 2</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="address" placeholder="Address" class="form-control" type="text" ng-model="userMaster.regData.address2">
+                    </div>
+                </div>
+              </div>
+              <br> <br>
+              <div class="form-group">
+                <label class="col-md-4 control-label">Address 3</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="address" placeholder="Address" class="form-control" type="text" ng-model="userMaster.regData.address3">
+                    </div>
+                </div>
+              </div>
+              <br><br>
+              <div class="form-group">
+                <label class="col-md-4 control-label" >City Name</label>
+              <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><li class="glyphicon glyphicon-flag"></li></span>
+                      <!--input name="country" placeholder="Country Name" class="form-control"  type="text" ng-model="countryMaster.regData.country" -->
+
+                      <input list="cityMasters" name="city"  placeholder="City Name" class="form-control" ng-model="regData.country" >
+                      <datalist id="cityMasters" >
+                      <option ng-repeat="x in cityMaster" value="{{x.city}}">City :{{x.city}}</option>
+                      </datalist>
+                      </div>
+                  </div>
+                  </div>
+                  <br>
+                  <br>
+              
+
+               <div class="form-group">
+                <label class="col-md-4 control-label">Pin Code</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                      <input name="zip" placeholder="Zip Code" class="form-control"  type="text" ng-model="userMaster.regData.pinCode">
+                    </div>
+                </div>
+              </div>
+              <br> <br>
+              <div class="form-group">
+               <label class="col-md-4 control-label" >Country Name</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><li class="glyphicon glyphicon-flag"></li></span>
+                        <input list="countryMasters" name="country"  placeholder="Country Name" class="form-control" ng-model="regData.country" >
+                          <datalist id="countryMasters" >
+                          <option ng-repeat="x in countryMaster" value="{{x.country}}">Country :{{x.country}}</option>
+                          </datalist>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <br>
+            
+           <div class="form-group">
+               <label class="col-md-4 control-label" >State Name</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><li class="glyphicon glyphicon-flag"></li></span>
+                        <input list="stateMasters" name="state"  placeholder="State Name" class="form-control" ng-model="regData.state" >
+                          <datalist id="stateMasters" >
+                          <option ng-repeat="x in stateMaster" value="{{x.state}}">State :{{x.state}}</option>
+                          </datalist>
+                      </div>
+                  </div>
+              </div>
+              <br>
+              <br>
+
+
+             <div class="form-group">
+                <label class="col-md-4 control-label">D.O.B</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                      <input name="zip" placeholder="Zip Code" class="form-control"  type="date" ng-model="userMaster.regData.dob">
+                    </div>
+                </div>
+              </div>
+              <br>
+              <br>
+             <div class="form-group">
+                <label class="col-md-4 control-label">Anniversary</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                      <input name="zip" placeholder="Zip Code" class="form-control"  type="date" ng-model="userMaster.regData.anniversary">
+                    </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="form-group">
+                 <label class="col-md-4 control-label">Mobile No.</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder="(000)000-0000" class="form-control" type="text" ng-model="userMaster.regData.mobileNo">
+                    </div>
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="form-group">
+                 <label class="col-md-4 control-label">Landline No.</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      <input name="phone" placeholder="(000)000-0000" class="form-control" type="text" ng-model="userMaster.regData.landLineNo">
+                    </div>
+                </div>
+              </div>
+              <br>
+              <br>
+               <div class="form-group">
+                 <label class="col-md-4 control-label">E-Mail</label>
+                  <div class="col-md-6  inputGroupContainer">
+                      <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                      <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" ng-model="userMaster.regData.emailId">
+                    </div>
+                </div>
+              </div>
+              <br>
+              <br>
+             <label class="col-md-4 control-label" >Active</label>
+                <div class="col-md-6  inputGroupContainer">
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="r3" class="flat-red">
+                      Yes
+                    </label>
+                  
+                    <label>
+                      <input type="radio" name="r3" class="flat-red">
+                      No
+                    </label>
+                  </div>
+                  <div class="col-md-6  inputGroupContainer">
+                 <button type="submit" class="btn btn-block btn-primary" ng-click="setStateMaster(regData)">Save</button></div>
+                <div class="col-md-6  inputGroupContainer">
+                <button type="submit" class="btn btn-block btn-primary">Reset</button></div>
+                </div>
+          
+
+              
+            </div>
+            </div>
+          <!-- /.box-body -->
+        </div>
+    
+    </div>
+    <!-- /.row -->
+    
+    </section>
+    <!-- /.content -->
+  

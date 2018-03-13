@@ -1,0 +1,134 @@
+<!--mythreyi-->
+
+    <section class="content-header">
+      <br>
+      <h1>
+        Role Mapping
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li><a href="#">Masters</a></li>
+        <li class="active">Role Mapping</li>
+      </ol>
+    </section>
+    <br>
+    <br>
+    <section class="content-header">
+     <div class="row"> 
+      <div class="col-md-6">
+        <div class="box">
+          <div class="box box-primary">
+            <div class="box-header">
+             <div class="bg-navy-active color-palette">
+                <br>
+                <h3 class="box-title">&nbsp;&nbsp;Role User Mapping</h3>
+              </div>
+              <br>
+            <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <label class="col-md-3 control-label" >User</label>
+                <div class="col-md-9  inputGroupContainer">
+                  <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="usr" placeholder="User" class="form-control"  type="text" ng-model="userMaster.regData.lastName" >
+                </div>                      
+              </div>
+              <br>
+              <br>
+              <br>
+              <label class="col-md-3 control-label" >Role</label>
+                <div class="col-md-8  inputGroupContainer">
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="r3" class="flat-red">
+                      Admin
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="r3" class="flat-red">
+                      Accounts
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="r3" class="flat-red">
+                      Campaign
+                    </label>
+                  </div>
+                  <div class="col-md-4  inputGroupContainer">
+                    <button type="submit" class="btn btn-block btn-primary" ng-click="setStateMaster(regData)">Save</button>
+                  </div>
+                  <div class="col-md-4  inputGroupContainer">
+                    <button type="submit" class="btn btn-block btn-primary">Reset</button>
+                  </div>
+                 </div>               
+                </div>
+              </div>
+            </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+      </div>
+
+      <div class="col-md-6">
+        
+        <div class="box">
+          <div class="box box-primary">
+            <div class="box-header">
+             <div class="bg-navy-active color-palette">
+                <br>
+                <h3 class="box-title">&nbsp;&nbsp;Role Screen Mapping</h3>
+              </div>
+              <br>
+            <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <label class="col-md-3 control-label" >Role</label>
+                <div class="col-md-8  inputGroupContainer">
+                  <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input name="role" placeholder="Role" class="form-control"  type="text" ng-model="userMaster.regData.lastName" >
+                  </div>
+                </div>
+              </div>
+                    
+              <br>
+              <label class="col-md-3 control-label" >Screen</label>
+                <div class="col-md-9  inputGroupContainer">
+                  <div class="form-group">
+                    <label>
+                      <input type="radio" name="r3" class="flat-red">
+                        Donor
+                    </label>
+                  </div>
+
+                <div class="form-group">
+                  <label>
+                  <input type="radio" name="r3" class="flat-red">
+                    Category
+                  </label>
+                </div>
+                <div class="form-group">
+                <label>
+                  <input type="radio" name="r3" class="flat-red">
+                  Project
+                  </label>
+                </div>
+                <div class="col-md-4  inputGroupContainer">
+                    <button type="submit" class="btn btn-block btn-primary" ng-click="setStateMaster(regData)">Save</button>
+                  </div>
+                  <div class="col-md-4  inputGroupContainer">
+                    <button type="submit" class="btn btn-block btn-primary">Reset</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- /.box-body -->
+      </div>
+    </section>
+  </div>   
+
+  <!-- /.content-wrapper -->
+
+ 
+
+<!--mythreyi-->
