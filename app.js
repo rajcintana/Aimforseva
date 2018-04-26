@@ -8,54 +8,86 @@ var cons = require('consolidate');
 const logger = require('./logger');
 const config = require('./model/config');
 const index = require('./routes/index');
-<<<<<<< HEAD
-var router=express.Router();
-// changes by rajesh(t0007)
-var appRoutes = require('./routes/master/country_master')(router);
-var appRoutes = require('./routes/master/state_master')(router);
-//var appRoutes=require('./routes/master/user_master')(router);
-//end of rajesh(t0007)
-=======
-const getCountryList = require('./routes/master/country_master');//changes by rajesh(t0007) any query asks
+var morgan = require('morgan');
+var mongoose = require('mongoose');
+const user = require('./routes/user/user_master');
+const country = require('./routes/master/country_master');
 const state = require('./routes/master/state_master');
-//const user = require('./routes/master/user_master');
+const changePsw = require('./routes/user/change_password');
+const addDonor = require('./routes/project/addDonor');
+const campaign = require('./routes/master/campaign_master');
+const payment = require('./routes/master/payment_master');
+const role = require('./routes/master/role_master');
+const searchpopup = require('./routes/master/search_popup');
+const TemplateList = require('./routes/master/notification_master');
+const projectCategory = require('./routes/project/category.js');
+const maintenancetype = require('./routes/project/ProMainType');
+const maintenancesubtype = require('./routes/project/ProMainSubType');
+const addProjects = require('./routes/project/projects');
+const annualMaintenance = require('./routes/project/annualMaintenance.js');
+const facilityManagement = require('./routes/project/facilityManagement');
+const generaldonation = require('./routes/project/general_donation');
+const landdonor = require('./routes/project/landdonor');
+const dashboard = require('./routes/master/Dashboard');
+const navigation = require('./routes/master/navigation_master');
+const rolemapping = require('./routes/master/role_user_map');
+const addBuilding = require('./routes/project/buildingDonor.js');
 
->>>>>>> b70b78cd32e38a4ac918e75500378db1eed3ecb7
 var app = express();
- 
+
 // view engine setup
 app.engine('html', cons.swig)
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(morgan('dev'));
+app.use('/', index);
+app.use('/state', state);
+app.use('/donor', addDonor);
+app.use('/changePsw', changePsw);
+app.use('/country', country);
+app.use('/campaign', campaign);
+app.use('/payment', payment);
+app.use('/user', user);
+app.use('/role', role);
+app.use('/template', TemplateList);
+app.use('/searchpopup', searchpopup);
+app.use('/category', projectCategory);
+app.use('/ProMainType', maintenancetype);
+app.use('/ProMainSubType', maintenancesubtype);
+app.use('/project', addProjects);
+app.use('/annual', annualMaintenance);
+app.use('/facility', facilityManagement);
+app.use('/generaldonation', generaldonation);
+app.use('/landdonor', landdonor);
+app.use('/dashboard', dashboard);
+app.use('/navigation', navigation);
+app.use('/rolemapping', rolemapping);
+app.use('/buildingdonor', addBuilding);
 
-app.use( index);
-app.use(getCountryList);//changes by rajesh(t0007) any query asks
-app.use(state);
 
-//app.use('/user', user);
-
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
 
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
